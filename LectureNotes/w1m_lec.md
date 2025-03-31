@@ -162,12 +162,19 @@ main( )
 ```
 
 **Grading:**
+
 Feature	Points
+
 Performance results for 1 thread	5
+
 Performance results for 4 threads	5
+
 One-thread-to-four-threads Speedup (>1.)	5
+
 Parallel Fraction	10
+
 Commentary	5
+
 Potential Total	30
 
 # 🐨 Note to self 🐨
