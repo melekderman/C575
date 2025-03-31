@@ -2,7 +2,7 @@
 
 [Course Introduction](https://web.engr.oregonstate.edu/~mjb/cs575/Handouts/course.introduction.1pp.pdf)
 
-##Notes:
+## Notes:
 
 HW1: quadratic eq.
 
@@ -17,8 +17,6 @@ Project 0 due April 7, 11:59
 
 [Project Notes:](https://web.engr.oregonstate.edu/~mjb/cs575/Handouts/project.notes.1pp.pdf)
 
-Notes:
-
 ```
 #include <omp.h>
 double time0 = omp_get_wtime( ); // seconds
@@ -26,10 +24,9 @@ double time0 = omp_get_wtime( ); // seconds
 fprintf( stderr, "Elapsed time = %10.2lf microseconds\n", 1000000. * ( time1 – time0 ) );
 ```
 
-‼ use uptime
-
-‼ add your name to your PDF report
-‼ don't upload .zip or .tar
+❗️ use uptime
+❗️ add your name to your PDF report
+❗️ don't upload .zip or .tar
 
 # Simple OpenMP:
 
