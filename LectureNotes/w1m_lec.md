@@ -25,7 +25,9 @@ fprintf( stderr, "Elapsed time = %10.2lf microseconds\n", 1000000. * ( time1 –
 ```
 
 ❗️ use uptime
+
 ❗️ add your name to your PDF report
+
 ❗️ don't upload .zip or .tar
 
 # Simple OpenMP:
