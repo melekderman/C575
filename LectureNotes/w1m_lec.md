@@ -184,3 +184,16 @@ Potential Total	30
 📚 [Full Open Source Class Notes](https://web.engr.oregonstate.edu/~mjb/cs575/)
 
 🤖 [Little Poor Guy](https://www.autoblog.com/features/train-hits-autonomous-robot-crossing)
+
+## Loop bash script
+
+```
+#!/bin/bash
+
+#number of threads:
+for t in 1 4
+do 
+        g++ -DNUMT=$t proj00.cpp -o proj00 -lm -fopenmp
+        ./proj00
+done
+```
