@@ -8,7 +8,7 @@ int main() {
     double S = perf_4thr / perf_1thr;
     double Fp = (4.0 / 3.0) * (1.0 - (1.0 / S));
 
-    std::cout << std::fixed << std::setprecision(2);
+    // std::cout << std::fixed << std::setprecision(8);
     std::cout << "Speedup (S): " << S << std::endl;
     std::cout << "Parallel fraction (Fp): " << Fp << std::endl;
 
