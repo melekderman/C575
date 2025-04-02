@@ -1,3 +1,4 @@
+03/31/2025
 # Course Introduction:
 
 [Course Introduction](https://web.engr.oregonstate.edu/~mjb/cs575/Handouts/course.introduction.1pp.pdf)
