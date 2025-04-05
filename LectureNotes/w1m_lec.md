@@ -5,8 +5,6 @@
 
 ## Notes:
 
-HW1: quadratic eq.
-
 Test 1 @ Week 5
 Test 2: @ Final Week
 
@@ -18,7 +16,7 @@ Project 0 due April 7, 11:59
 
 [Project Notes:](https://web.engr.oregonstate.edu/~mjb/cs575/Handouts/project.notes.1pp.pdf)
 
-```
+```cpp
 #include <omp.h>
 double time0 = omp_get_wtime( ); // seconds
 . . . double time1 = omp_get_wtime( ); // seconds
@@ -36,7 +34,10 @@ fprintf( stderr, "Elapsed time = %10.2lf microseconds\n", 1000000. * ( time1 –
 [Simple OpenMP](https://web.engr.oregonstate.edu/~mjb/cs575/Handouts/openmp-simple.1pp.pdf)
 
 **to create parallelism**
+
+```cpp 
 #pragma omp directive [clause]
+```
 
 in this slide, page 4 is very important for openMP settings.
 
@@ -66,22 +67,23 @@ Do this twice, once for one thread and once for four threads:
 and
 #define NUMT 4
 
-Use omp_set_num_threads(NUMT); to set the number of threads to use.
+Use `omp_set_num_threads(NUMT)`; to set the number of threads to use.
 
-Time the two runs using two calls to omp_get_wtime();. Convert the timing results into "Mega-Multiplies per Second".
+Time the two runs using two calls to `omp_get_wtime()`;. Convert the timing results into "Mega-Multiplies per Second".
 
 What speedup, S, are you seeing when you move from 1 thread to 4 threads?
+
+$$
 S = (Execution time with one thread) / (Execution time with four threads) = (Performance with four threads) / (Performance with one thread)
+$$
 
-This number should be greater than 1.0 . If not, be sure you are using the correct numerator and denominator.
-
+This number should be greater than 1.0. If not, be sure you are using the correct numerator and denominator.
 
 If your 1-thread-to-4-threads speedup is S, then use this equation to compute the parallel fraction:
 
-float Fp = (4./3.)*( 1. - (1./S) );
+`float Fp = (4./3.)*( 1. - (1./S) )`;
 Don't worry what this means just yet. This will become more meaningful soon.
 You must use only the 1-thread-to-4-threads speedup with this equation. The numbers in this equation depend on that.
-
 
 Your written commentary (turned in as a PDF file) should include:
 Tell what machine you ran this on
@@ -94,7 +96,7 @@ What was your Parallel Fraction, Fp? (Hint: it should be less than 1.0, but not 
 
 This is your complete main program. All you have to do is compile and run it.
 
-```
+```cpp
 #include <omp.h>
 #include <stdio.h>
 #include <math.h>
@@ -188,7 +190,7 @@ Potential Total	30
 
 ## Loop bash script
 
-```
+```bash
 #!/bin/bash
 
 #number of threads:

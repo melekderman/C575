@@ -4,8 +4,6 @@
 
 ### Lectures and Videos:
 
-
-
 1. [Class Resources Page](https://web.engr.oregonstate.edu/~mjb/cs575/)
 2. [Course Introduction](https://web.engr.oregonstate.edu/~mjb/cs575/Handouts/course.introduction.1pp.pdf), [LV](https://media.oregonstate.edu/media/t/1_zbdfkkm5)
 3. [Project Notes](https://web.engr.oregonstate.edu/~mjb/cs575/Handouts/project.notes.1pp.pdf), [LV](https://media.oregonstate.edu/media/t/1_vs174d6r)
