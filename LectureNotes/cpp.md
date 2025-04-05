@@ -375,3 +375,7 @@ int main() {
     return 0;
 }
 ```
+
+# Copyright
+
+[Terms of Conditions (Programiz.com) - See 3.4](https://www.programiz.com/terms-of-use)
