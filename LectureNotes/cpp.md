@@ -11,7 +11,7 @@ g++ input.cpp -o program
 
 [Source](https://www.programiz.com/cpp-programming/function)
 
-==Example 1:==
+<mark>Example 1:</mark>
 
 ```cpp
 #include <iostream>
@@ -34,7 +34,7 @@ int main() {
 // Hello world!
 ```
 
-==Example 2:==
+<mark>Example 2:</mark>
 
 ```cpp
 // program to print a text
@@ -68,14 +68,14 @@ int main() {
 
 [Source](https://www.programiz.com/cpp-programming/arrays)
 
-==Example 1:==
+<mark>Example 1:</mark>
 
 ```cpp
 int arr[5] = {1, 2, 3, 4, 5};
 cout << arr[2]; // Output: 3
 ```
 
-==Example 2:==
+<mark>Example 2:</mark>
 
 ```cpp
 #include <iostream>
@@ -109,7 +109,7 @@ int main() {
 // The numbers are: 7  5  6  12  35
 ```
 
-==Example 3:==
+<mark>Example 3:</mark>
 
 ```cpp
 #include <iostream>
@@ -146,7 +146,7 @@ int main() {
 // The numbers are: 11  12  13  14  15
 ```
 
-==Example 4:==
+<mark>Example 4:</mark>
 
 ```cpp
 #include <iostream>
@@ -195,7 +195,7 @@ int main() {
 
 [Source](https://www.programiz.com/cpp-programming/for-loop)
 
-==Example 1:==
+<mark>Example 1:</mark>
 
 ```cpp
 for (int i = 0; i < 5; i++) {
@@ -204,7 +204,7 @@ for (int i = 0; i < 5; i++) {
 // Output: 0 1 2 3 4
 ```
 
-==Example 2:==
+<mark>Example 2:</mark>
 
 ```cpp
 // C++ Program to display a text 5 times
@@ -228,7 +228,7 @@ int main() {
 A collection of variables
 
 
-==Example:==
+<mark>Example:</mark>
 
 ```cpp
 // Program to assign data to members of a structure variable
@@ -271,7 +271,7 @@ int main()
 
 An array where each element is a structure instance.
 
-==Example:==
+<mark>Example:</mark>
 
 ```cpp
 #include <iostream>
@@ -298,7 +298,7 @@ int main() {
 
 A structure that holds separate arrays for each field.
 
-==Example:==
+<mark>Example:</mark>
 
 ```cpp
 #include <iostream>
@@ -324,7 +324,7 @@ int main() {
 
 A simple demonstration of pointers and dereferencing.
 
-==Example:==
+<mark>Example:</mark>
 
 ```cpp
 #include <iostream>
@@ -345,7 +345,7 @@ int main() {
 
 Creating and printing a simple singly linked list.
 
-==Example:==
+<mark>Example:</mark>
 
 ```cpp
 #include <iostream>
