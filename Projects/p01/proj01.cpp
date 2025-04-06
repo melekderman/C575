@@ -143,7 +143,7 @@ main( int argc, char *argv[ ] )
 
 		numHits = 0;
 
-		#pragma omp parallel for reduction(+:numHits)
+		#pragma omp parallel for reduction(+:numHits) // try different clause
 		for( int n = 0; n < NUMTRIALS; n++ )
 		{
 			// randomize everything:
