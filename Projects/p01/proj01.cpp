@@ -48,9 +48,51 @@ const float TOL = 5.0;		// tolerance in cannonball hitting the castle in meters
 				// castle is destroyed if cannonball lands between d-TOL and d+TOL
 
 // function prototypes:
-float		Ranf( float, float );
-int		Ranf( int, int );
-void		TimeOfDaySeed( );
+float
+Ranf( float low, float high )
+{
+        float r = (float) rand();               // 0 - RAND_MAX
+        float t = r  /  (float) RAND_MAX;       // 0. - 1.
+
+        return   low  +  t * ( high - low );
+}
+
+int
+Ranf( int ilow, int ihigh )
+{
+        float low = (float)ilow;
+        float high = ceil( (float)ihigh );
+
+        return (int) Ranf(low,high);
+}
+
+// call this if you want to force your program to use
+// a different random number sequence every time you run it:
+void
+TimeOfDaySeed( )
+{
+	time_t now;
+	time( &now );
+
+	struct tm n;
+	struct tm jan01;
+#ifdef WIN32
+	localtime_s( &n, &now );
+	localtime_s( &jan01, &now );
+#else
+	n =     *localtime(&now);
+	jan01 = *localtime(&now);
+#endif
+	jan01.tm_mon  = 0;
+	jan01.tm_mday = 1;
+	jan01.tm_hour = 0;
+	jan01.tm_min  = 0;
+	jan01.tm_sec  = 0;
+
+	double seconds = difftime( now, mktime(&jan01) );
+	unsigned int seed = (unsigned int)( 1000.*seconds );    // milliseconds
+	srand( seed );
+}
 
 // degrees-to-radians:
 inline
@@ -101,7 +143,7 @@ main( int argc, char *argv[ ] )
 
 		numHits = 0;
 
-		#pragma omp parallel for ?????
+		#pragma omp parallel for reduction(+:numHits)
 		for( int n = 0; n < NUMTRIALS; n++ )
 		{
 			// randomize everything:
@@ -114,8 +156,8 @@ main( int argc, char *argv[ ] )
 			float  d  =  ds[n];
 
 			// see if the ball doesn't even reach the cliff:`
-			float t = ?????
-			float x = ?????
+			float t = -vy / (0.5f * GRAVITY);
+			float x = vx * t;
 			if( x <= g )
 			{
 				if( DEBUG )	fprintf( stderr, "Ball doesn't even reach the cliff\n" );
@@ -123,8 +165,8 @@ main( int argc, char *argv[ ] )
 			else
 			{
 				// see if the ball hits the vertical cliff face:
-				t = ?????
-				float y = ?????
+				t = g / vx;
+				float y = vy * t + 0.5f * GRAVITY * t * t;
 				if( y <= h )
 				{
 					if( DEBUG )	fprintf( stderr, "Ball hits the cliff face\n" );
@@ -137,10 +179,10 @@ main( int argc, char *argv[ ] )
 					// where 'A' multiplies time^2
 					//       'B' multiplies time
 					//       'C' is a constant
-					float A = ?????
-					float B = ?????
-					float C = ?????
-					float disc = B*B - 4.f*A*C;	// quadratic formula discriminant
+					float A = 0.5f * GRAVITY;
+					float B = vy;
+					float C = -h;
+					float disc = B * B - 4.f * A * C;	// quadratic formula discriminant
 
 					// ball doesn't go as high as the upper deck:
 					// this should "never happen" ... :-)
@@ -168,7 +210,7 @@ main( int argc, char *argv[ ] )
 					if(  fabs( upperDist - d ) ≤ TOL )
 					{
 						if( DEBUG )  fprintf( stderr, "Hits the castle at upperDist = %8.3f\n", upperDist );
-						?????
+						numHits++;
 					}
 					else
 					{

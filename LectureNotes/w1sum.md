@@ -1,5 +1,6 @@
-# Week 1 Summary and Some Notes:
+# Week 1 Summary and Some Notes Useful Resources I Found:
 
+Timing: L1pp page4
 
 
 
