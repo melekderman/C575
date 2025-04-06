@@ -40,12 +40,12 @@ const float DMIN  =	10.0;	// distance to castle in meters
 const float DMAX  =	20.0;	// distance to castle in meters
 const float VMIN  =	20.0;	// intial cnnonball velocity in meters / sec
 const float VMAX  =	30.0;	// intial cnnonball velocity in meters / sec
-const float THMIN = 	70.0;	// cannonball launch angle in degrees
+const float THMIN = 70.0;	// cannonball launch angle in degrees
 const float THMAX =	80.0;	// cannonball launch angle in degrees
 
 const float GRAVITY =	-9.8;	// acceleraion due to gravity in meters / sec^2
-const float TOL = 5.0;		// tolerance in cannonball hitting the castle in meters
-				// castle is destroyed if cannonball lands between d-TOL and d+TOL
+const float TOL = 		5.0;	// tolerance in cannonball hitting the castle in meters
+								// castle is destroyed if cannonball lands between d-TOL and d+TOL
 
 // function prototypes:
 float
@@ -207,7 +207,7 @@ main( int argc, char *argv[ ] )
 					float upperDist = vx * tmax  -  g;
 
 					// see if the ball hits the castle:
-					if(  fabs( upperDist - d ) ≤ TOL )
+					if(  fabs( upperDist - d ) <= TOL )
 					{
 						if( DEBUG )  fprintf( stderr, "Hits the castle at upperDist = %8.3f\n", upperDist );
 						numHits++;
@@ -230,7 +230,7 @@ main( int argc, char *argv[ ] )
 
 // uncomment this if you want to print output to a ready-to-use CSV file:
 
-// #define CSV
+//#define CSV
 #ifdef CSV
 	fprintf(stderr, "%2d , %8d , %6.2lf\n",  NUMT, NUMTRIALS, maxPerformance);
 #else
